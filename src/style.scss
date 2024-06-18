@@ -19,6 +19,7 @@ padding: 2px;
 min-height: 40px;
 position: sticky;
 top: 0;
+z-index: 999;
 .flex{
     display: flex;
     justify-content: space-between;
@@ -88,9 +89,10 @@ top: 0;
     }
 }
 .banner {
-    min-height: 80vh;
+    height: 80vh;
     width: 100%;
-    position: absolute;
+    border-radius: 0 0px 80% 0;
+    z-index: 1;
     .flex{
         display: flex;
         justify-content: center;
@@ -105,5 +107,16 @@ top: 0;
         padding: 0.3rem;
     }
 }
+
+//carousel
+.box{
+    text-align: center;
+    img{
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+    }
+}
+  
 
 
