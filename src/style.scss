@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+ul {
+    list-style: none;
+    color: inherit;
+}
+
+// header 
+.head{
+background: #FFFFFF;
+box-shadow: 0 0 10px rgba(128, 128, 128, 0.453);
+// color: white;
+display: flex;
+align-items: center;
+padding: 2px;
+min-height: 40px;
+position: sticky;
+top: 0;
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.login{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    a{
+        color: black ;
+        text-decoration: none;
+
+        &:hover{
+            color: red;
+            cursor: pointer;
+     }
+    }
+    ul {
+        display: flex;
+        gap: 1rem;
+        li {
+            font-size: 22px;
+        }
+        span{
+            font-size: 16px;
+        }
+        
+    }
+}
+.btn-j{
+    font-size: 14px;
+    height: 30px;
+    padding: 4px 7px 7px 7px ;
+    border: none;
+    border-radius: 10px;
+    background: rgb(119, 119, 10);
+    color: white;
+}
+}
+
+// login page 
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper{
+    width: 400px;
+    border: 1px solid rgb(224, 218, 218);
+    padding: 1rem;
+    border-radius: 10px;
+
+    a{
+        text-decoration: none;
+    }
+}
+
+//home
+.nav{
+    background: rgb(4, 54, 107) !important;
+    button {
+        background: transparent;
+        border: none;
+    }
+}
+.banner {
+    min-height: 80vh;
+    width: 100%;
+    position: absolute;
+    .flex{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        position: relative;
+        top: 200px;
+    }
+    .form{
+        width: 600px;
+        border: none;
+        border-radius: 7px;
+        padding: 0.3rem;
+    }
+}
+
+

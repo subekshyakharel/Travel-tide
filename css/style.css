@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  color: inherit;
+}
+
+.head {
+  background: #FFFFFF;
+  -webkit-box-shadow: 0 0 10px rgba(128, 128, 128, 0.453);
+          box-shadow: 0 0 10px rgba(128, 128, 128, 0.453);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2px;
+  min-height: 40px;
+  position: sticky;
+  top: 0;
+}
+.head .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+.head .login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.head .login a {
+  color: black;
+  text-decoration: none;
+}
+.head .login a:hover {
+  color: red;
+  cursor: pointer;
+}
+.head .login ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+.head .login ul li {
+  font-size: 22px;
+}
+.head .login ul span {
+  font-size: 16px;
+}
+.head .btn-j {
+  font-size: 14px;
+  height: 30px;
+  padding: 4px 7px 7px 7px;
+  border: none;
+  border-radius: 10px;
+  background: rgb(119, 119, 10);
+  color: white;
+}
+
+.login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper {
+  width: 400px;
+  border: 1px solid rgb(224, 218, 218);
+  padding: 1rem;
+  border-radius: 10px;
+}
+.wrapper a {
+  text-decoration: none;
+}
+
+.nav {
+  background: rgb(4, 54, 107) !important;
+}
+.nav button {
+  background: transparent;
+  border: none;
+}
+
+.banner {
+  min-height: 80vh;
+  width: 100%;
+  position: absolute;
+}
+.banner .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  top: 200px;
+}
+.banner .form {
+  width: 600px;
+  border: none;
+  border-radius: 7px;
+  padding: 0.3rem;
+}/*# sourceMappingURL=style.css.map */
