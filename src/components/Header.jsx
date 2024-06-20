@@ -3,6 +3,7 @@ import { Link, Route, Routes } from 'react-router-dom'
 import Login from '../Head/Login'
 import Favorites from '../Head/Favorites'
 import Home from '../Pages/Home'
+import Something from './Something'
 
 
 const Header = () => {
@@ -31,6 +32,7 @@ const Header = () => {
         <Route path='/' element = {<Home/>} />
         <Route path='/login' element = {<Login/>} />
         <Route path='/favorites' element = {<Favorites/>} />
+        <Route path='/something' element= {<Something/>}/>
       </Routes>
     </>
   )

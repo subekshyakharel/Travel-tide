@@ -110,7 +110,6 @@ ul {
 .banner {
   height: 80vh;
   width: 100%;
-  border-radius: 0 0px 80% 0;
   z-index: 1;
 }
 .banner .flex {

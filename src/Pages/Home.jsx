@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import bannerImg from '../assets/b.jpg';
+import CityInfo from '../components/CityInfo';
 
 const Home = () => {
   const apiEp = "https://randomuser.me/api/?results=20";
   const [data, setData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('')
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchapi = async (url) => {
@@ -19,12 +22,20 @@ const Home = () => {
     };
     fetchapi(apiEp);
   }, []);
+
+  const handleSearch = (e) =>{
+    e.preventDefault();
+    if(searchTerm.toLowerCase === 'something'){
+      navigate('/something');
+    }
+  }
   
   // Function to chunk the data into arrays of 4
   const chunkData = (array, chunkSize) => {
     const chunks = [];
     for (let i = 0; i < array.length; i += chunkSize) {
       chunks.push(array.slice(i, i + chunkSize));
+      console.log(chunks)
     }
     return chunks;
   };
@@ -104,10 +115,16 @@ const Home = () => {
         <div className="container flex">
           <div>
             <h2 className='text-white'>Find A Travel Buddy, Share Costs & Experiences</h2>
-            <form action="">
-              <input type="text" placeholder='Where are you planning to go?' className='form' />
-              <button className="btn btn-danger">Search</button>
+            <form action="" onSubmit={handleSearch}>
+              <input
+              type="text" 
+              placeholder='Where are you planning to go?' 
+              className='form'
+              value={searchTerm}
+              onChange={(e)=>setSearchTerm(e.target.value)} />
+              <button type='submit' className="btn btn-danger">Search</button>
             </form>
+            <CityInfo city={'kathmandu'} />
           </div>
         </div>
       </section>
@@ -143,6 +160,8 @@ const Home = () => {
           </div>
         </div>
       </main>
+
+      
     </>
   );
 };
