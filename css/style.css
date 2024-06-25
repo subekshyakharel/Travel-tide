@@ -48,7 +48,7 @@ ul {
           align-items: center;
 }
 .head .login a {
-  color: black;
+  color: #255231;
   text-decoration: none;
 }
 .head .login a:hover {
@@ -100,7 +100,7 @@ ul {
 }
 
 .nav {
-  background: rgb(4, 54, 107) !important;
+  background: #255231 !important;
 }
 .nav button {
   background: transparent;
@@ -137,4 +137,19 @@ ul {
   height: 100px;
   width: 100px;
   border-radius: 50%;
+}
+
+.box-place {
+  width: 100%;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px grey;
+          box-shadow: 0 0 10px grey;
+  padding: 1rem;
+}
+.box-place .img-width {
+  width: 500px;
+  margin: 0 2rem 0 0;
+}
+.box-place .img-width img {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

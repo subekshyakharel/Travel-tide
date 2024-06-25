@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import bannerImg from '../assets/b.jpg';
-import CityInfo from '../components/CityInfo';
 
 const Home = () => {
   const apiEp = "https://randomuser.me/api/?results=20";
   const [data, setData] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('')
-  const navigate = useNavigate();
+
+
+  // const [searchTerm, setSearchTerm] = useState('')
+  // const navigate = useNavigate();
 
   useEffect(() => {
     const fetchapi = async (url) => {
@@ -23,19 +24,18 @@ const Home = () => {
     fetchapi(apiEp);
   }, []);
 
-  const handleSearch = (e) =>{
-    e.preventDefault();
-    if(searchTerm.toLowerCase === 'something'){
-      navigate('/something');
-    }
-  }
+  // const handleSearch = (e) =>{
+  //   e.preventDefault();
+  //   if(searchTerm.toLowerCase === 'something'){
+  //     navigate('/something');
+  //   }
+  // }
   
   // Function to chunk the data into arrays of 4
   const chunkData = (array, chunkSize) => {
     const chunks = [];
     for (let i = 0; i < array.length; i += chunkSize) {
       chunks.push(array.slice(i, i + chunkSize));
-      console.log(chunks)
     }
     return chunks;
   };
@@ -43,6 +43,7 @@ const Home = () => {
   // Chunk the data into arrays of 4 items each
   const chunkedData = chunkData(data, 4);
 
+      
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark nav">
@@ -55,76 +56,61 @@ const Home = () => {
             <ul className='navbar-nav'>
               <Link to={`/about`}>
                 <li className='nav-item dropdown'>
-                  <button className='btn btn-primary' type='button' id='dropdownMenuButton' data-bs-toggle="dropdown" aria-expanded="false">
+                  <button className='btn btn-primary' type='button' id='dropdownMenuButton' aria-expanded="false">
                     About us
                   </button>
                 </li>
               </Link>
             </ul>
+            <Link to={`/places`} >
             <ul className="navbar-nav">
-          <li className="nav-item dropdown">
-            <button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-              Places to visit
-            </button>
-            <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
-              <li><Link className="dropdown-item" to="/action">Action</Link></li>
-              <li><Link className="dropdown-item" to="/another-action">Another action</Link></li>
-              <li><Link className="dropdown-item" to="/something-else">Something else here</Link></li>
+              <li className="nav-item dropdown">
+                <button className="btn btn-primary" type="button" id="dropdownMenuButton" aria-expanded="false">
+                  Places to visit
+                </button>
+              </li>
             </ul>
-          </li>
-        </ul>
-         
-        <ul className="navbar-nav">
-          <li className="nav-item dropdown">
-            <button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-              Find people
-            </button>
-            <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
-              <li><Link className="dropdown-item" to="/action">Action</Link></li>
-              <li><Link className="dropdown-item" to="/another-action">Another action</Link></li>
-              <li><Link className="dropdown-item" to="/something-else">Something else here</Link></li>
+            </Link>
+            <ul className="navbar-nav">
+              <li className="nav-item dropdown">
+                <button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                  Find people
+                </button>
+                <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
+                  <li><Link className="dropdown-item" to="/action">Action</Link></li>
+                  <li><Link className="dropdown-item" to="/another-action">Another action</Link></li>
+                  <li><Link className="dropdown-item" to="/something-else">Something else here</Link></li>
+                </ul>
+              </li>
             </ul>
-          </li>
-        </ul>
-
-        <ul className="navbar-nav">
-          <li className="nav-item dropdown">
-            <button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-              Travel and Learn
-            </button>
-            <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
-              <li><Link className="dropdown-item" to="/action">Action</Link></li>
-              <li><Link className="dropdown-item" to="/another-action">Another action</Link></li>
-              <li><Link className="dropdown-item" to="/something-else">Something else here</Link></li>
+            <ul className="navbar-nav">
+              <li className="nav-item dropdown">
+                <button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                  Travel and Learn
+                </button>
+                <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton">
+                  <li><Link className="dropdown-item" to="/action">Action</Link></li>
+                  <li><Link className="dropdown-item" to="/another-action">Another action</Link></li>
+                  <li><Link className="dropdown-item" to="/something-else">Something else here</Link></li>
+                </ul>
+              </li>
             </ul>
-          </li>
-        </ul>
-
-        <ul className="navbar-nav">
-          <li className="nav-item dropdown">
-            <button className="btn btn-primary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-              safety
-            </button>
-          </li>
-        </ul>
+            <ul className="navbar-nav">
+              <li className="nav-item dropdown">
+                <button className="btn btn-primary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                  safety
+                </button>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
 
       <section className="banner" style={{ backgroundImage: `url(${bannerImg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed', scrollBehavior: 'smooth' }}>
         <div className="container flex">
-          <div>
-            <h2 className='text-white'>Find A Travel Buddy, Share Costs & Experiences</h2>
-            <form action="" onSubmit={handleSearch}>
-              <input
-              type="text" 
-              placeholder='Where are you planning to go?' 
-              className='form'
-              value={searchTerm}
-              onChange={(e)=>setSearchTerm(e.target.value)} />
-              <button type='submit' className="btn btn-danger">Search</button>
-            </form>
-            <CityInfo city={'kathmandu'} />
+          <div className='text-center '>
+            <h1 className='text-white'>Find A Travel Buddy, share costs & Experiences</h1>
+          <Link to={`/places`} > <button type='submit' className="btn btn-danger">Search new places</button> </Link>
           </div>
         </div>
       </section>
@@ -161,7 +147,35 @@ const Home = () => {
         </div>
       </main>
 
-      
+
+
+      {/* Scrollable modal */}
+      <div>
+  {/* Button trigger modal */}
+  <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Launch static backdrop modal
+  </button>
+  {/* Modal */}
+  <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex={-1} aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div className="modal-dialog">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h1 className="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+          <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+        </div>
+        <div className="modal-body">
+          
+        </div>
+        <div className="modal-footer">
+          <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" className="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     </>
   );
 };

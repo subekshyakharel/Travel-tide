@@ -4,11 +4,19 @@ import App from './App.jsx'
 import './index.css'
 import '../css/style.css'
 import { BrowserRouter } from 'react-router-dom'
+import { Auth0Provider } from '@auth0/auth0-react'
+import Places from './Navbar/Places.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <BrowserRouter>
+  <Auth0Provider
+    domain="dev-7tjngsnilye7wy28.au.auth0.com"
+    clientId="dFPgRJVKH7iyTGs8T24bgLQE1Xc9l6jN"
+    authorizationParams={{
+      redirect_uri: window.location.origin
+    }}
+  ><BrowserRouter>
     <App />
+    <Places/>
     </BrowserRouter>
-  </React.StrictMode>,
+  </Auth0Provider>,
 )

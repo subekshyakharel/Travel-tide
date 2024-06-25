@@ -7,7 +7,6 @@ ul {
     list-style: none;
     color: inherit;
 }
-
 // header 
 .head{
 background: #FFFFFF;
@@ -32,7 +31,7 @@ z-index: 999;
     align-items: center;
 
     a{
-        color: black ;
+        color: #255231 ;
         text-decoration: none;
 
         &:hover{
@@ -82,7 +81,7 @@ z-index: 999;
 
 //home
 .nav{
-    background: rgb(4, 54, 107) !important;
+    background: #255231!important;
     button {
         background: transparent;
         border: none;
@@ -117,6 +116,20 @@ z-index: 999;
         border-radius: 50%;
     }
 }
-  
 
+
+//Places
+.box-place{
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px grey;
+    padding: 1rem;
+    .img-width{
+        width: 500px;
+        margin: 0  2rem 0 0 ;
+        img {
+            width: 100%;
+        }
+    }
+}
 
